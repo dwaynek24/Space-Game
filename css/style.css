@@ -39,3 +39,19 @@ body{
 
         padding: auto;
     }
+    #keyboard{
+        display: flex;
+        justify-content:center ;
+        color:blue ;
+        background-color: blue;
+    }
+    .container1{
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+    }
+
+    #wordShowcase{
+        font-size: 40px;
+    }
