@@ -2,7 +2,8 @@ const words= ["Astronomer","Equinox","Meteorite","Starburst", "Telescope" ]
 var rand = words[Math.floor(Math.random() * words.length)];
 const wordToGuess = rand;
 const hiddenWord =[];
-
+const logGuess = document.querySelector("#sub")
+const letterGuess = document.querySelector("#inputBox")
 
 let genHiddenWord = () => {
 for(let i = 0; i < rand.length;i++){
@@ -15,13 +16,18 @@ console.log(hiddenWord)
 
 
 genHiddenWord()
+document.querySelector("#wordShowcase").innerHTML =hiddenWord;
+
+
+
+logGuess.addEventListener("click", function() {
+    return logGuess
+    
+})  
+
+
+
+
 
 console.log(hiddenWord)
 console.log(wordToGuess)
-const letterGuess = document.querySelector(".letterGuess")
-document.querySelector("#wordShowcase").innerHTML =hiddenWord;
-const logGuess = document.querySelector("#submitGuess")
-logGuess.addEventListener("click", function() {
-    
-        console.log(letterGuess)
-});

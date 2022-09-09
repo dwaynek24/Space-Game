@@ -15,18 +15,24 @@
 
 </header>
 <body>
-        <div class= container1>
-            <div class=guessesN> Wrong Guesses: <span id="mistakes">0</span> of <span id="maxWrong">6</span></div>
+      <div class="gameContainer">
+            <div class=guessCount> Wrong Guesses: <span id="mistakes">0</span> of <span id="maxWrong">6</span></div>
             <p id="wordShowcase"></p>
-            <div class= "letterGuess"><input type="text" id="lGH" name="letterGuessH" maxlength="1"></div><br><br>
-            <input type="submit" id="submitGuess" value="Submit">
-
+            
+                
+                <input id="inputBox" type="text" name="Thing" value="" maxlength="1"/>
+                <button id="sub" >submit</button>
+           
+       
+        
+        
+            <div class="wrongLettersContainer">
+            <div id="wrongLetters"></div>
+        
+            <div class="word" id="word"></div>
         </div>
-    
-   <div class="qDisplay">`</div>
 
-  
-</div>
+     
 </body>
 <footer>
 
