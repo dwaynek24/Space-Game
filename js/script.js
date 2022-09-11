@@ -1,9 +1,9 @@
 const words = ["astronomer", "equinox", "meteorite", "starburst", "telescope"];
-const wordToGuess = rand;
+var wordToGuess = rand;
 const wrongLetterBox = document.querySelector("wrongLetters");
 const submitButton = document.querySelector("#sub");
 const input = document.querySelector("#inputBox");
-const hiddenWord = [];
+let hiddenWord = [];
 const guessedLetter = [];
 const wrongGuessCount = document.querySelector(".guessCount");
 const correctLetters = [];
@@ -21,7 +21,7 @@ let genHiddenWord = () => {
   
    
     
-   console.log(hiddenWord)
+   
   
   //   return hiddenWord;
     
@@ -30,16 +30,21 @@ let genHiddenWord = () => {
 
   let renderWord = () => {
    renderV= hiddenWord.join("")
-    console.log(hiddenWord)
+    
     wordShow.innerHTML=hiddenWord
   }
   genHiddenWord();
 
 
 let compareGuess = () => {
-  
-  if (rand.includes(guess)) {
+  if (wrongLetters.length===2) {
+  loser()}
+  else if(hiddenWord.includes("_")===false){
+    winner()
+  }
+  else if (rand.includes(guess)) {
     console.log("yay")
+    correctLetters.push(guess)
     correctGuess();
    
     
@@ -58,6 +63,7 @@ let compareGuess = () => {
 submitButton.addEventListener("click", function () {
   guess = input.value;
   compareGuess();
+  console.log(hiddenWord);
     
   
   
@@ -69,18 +75,22 @@ let correctGuess = () => {
         if (rand[i]== guess){
             hiddenWord[i]=guess
         }
-        console.log(hiddenWord)
+        // console.log(hiddenWord)
     }
     
     
 }
 let loser = () => {
-    if(wrongLetters===[2]) {alert("You Lose:( refresh to try again.")
+    {alert("*explosion... dont quit your day job Spacecowboy..refresh to try again")
 }}
-loser()
-console.log(guess);
+let winner = () => {
+    {alert("Blast off was a success! see you later Spacecowboy..refresh to play again.")
+}}
 
+console.log(guess);
+console.log(hiddenWord)
 console.log(rand);
+console.log(wordToGuess)
 // look up string.includes
 //  a check to see if string includes or does not
 // if it does include, replace that in hidden word array
