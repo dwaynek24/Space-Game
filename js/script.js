@@ -11,16 +11,15 @@ const wrongLetters = [];
 const wordShow = document.querySelector("#wordShowcase");
 let guess = "";
 var rand = words[Math.floor(Math.random() * words.length)];
-
+var renderV =  hiddenWord.join("");
 let genHiddenWord = () => {
     for (let i = 0; i < rand.length; i++) {
       hiddenWord.push("_");
     
     }
+    renderWord()
   
-    hiddenWord.join("");
-    console.log(hiddenWord)
-    wordShow.innerHTML=hiddenWord
+   
     
    console.log(hiddenWord)
   
@@ -28,16 +27,23 @@ let genHiddenWord = () => {
     
     
   };
+
+  let renderWord = () => {
+   renderV= hiddenWord.join("")
+    console.log(hiddenWord)
+    wordShow.innerHTML=hiddenWord
+  }
   genHiddenWord();
 
 
 let compareGuess = () => {
-  // for(let i = 0; i < rand.length;i++) {
+  
   if (rand.includes(guess)) {
+    console.log("yay")
     correctGuess();
    
-    // hiddenWord.push(guess);
-    correctLetters.push(guess);
+    
+    renderWord()
   } else {
     wrongLetters.push(guess);
   }
@@ -52,23 +58,26 @@ let compareGuess = () => {
 submitButton.addEventListener("click", function () {
   guess = input.value;
   compareGuess();
+    
   
   
-  return guess, console.log(guess)
+  return guess
 });
 let correctGuess = () => {
     // loop through rand if for loop conditional if ran index i = guess then replace
     for (let i=0; i <rand.length;i++) {
         if (rand[i]== guess){
-            hiddenWord.innerHTML= guess
+            hiddenWord[i]=guess
         }
         console.log(hiddenWord)
     }
     
     
 }
-
-
+let loser = () => {
+    if(wrongLetters===[2]) {alert("You Lose:( refresh to try again.")
+}}
+loser()
 console.log(guess);
 
 console.log(rand);
