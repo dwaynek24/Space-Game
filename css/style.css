@@ -26,7 +26,13 @@ height: 80vh;
 margin: 0;
 overflow:hidden ;}
 
-    
+    #rightLetters{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: baseline;
+        align-items: baseline;
+    }
     .gameContainer{
         padding: 20px 30px;
         position: relative;
